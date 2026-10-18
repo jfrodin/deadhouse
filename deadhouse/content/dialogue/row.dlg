@@ -1,0 +1,311 @@
+# ============================================================================
+#  Lantern Row — Night Two
+# ============================================================================
+
+# ---------------------------------------------------------------- Augie Prell
+=== augie_start
+? {augie.camera_returned} -> augie_after
+? {has:camera} -> augie_return
+? {augie.met} -> augie_again
+~ remember augie met
+Augie: Evening. Morning. Whatever this is. You're the Deadhouse woman — the one with the wagon.
+Ines: Depends who's asking.
+Augie: Augie Prell. Portraits, weddings, and the occasional husband who isn't where he said he'd be.
+* [wry] A photographer who works in the dark. -> augie_dark
+* [blunt] I'm asking about Tomas Reyes. -> augie_tomas
+* [cold] I don't buy pictures. -> augie_cold
+
+=== augie_dark
+Augie: Best light there is. Nobody poses.
+-> augie_offer
+
+=== augie_cold
+~ remember augie ines_cold
+Augie: Nobody buys pictures. They buy the negatives. Afterwards.
+-> augie_offer
+
+=== augie_tomas
+Augie: Reyes. The one they carried out to you in a tablecloth.
+> He says it too fast. He's been waiting for someone to ask.
+-> augie_offer
+
+=== augie_offer
+Augie: I might have something for you. A picture. The Velour's side door, two nights back, ten past two in the morning. You'd want to see who's holding the door.
+Ines: And what does it cost me?
+Augie: My camera. Hobb took it. Collecting on a debt, he said — he'll sell it back when I can afford my own hands.
+Augie: He keeps the top floor of the Garnet Arms. Number fourteen, this end of the block. His boys keep the stairs.
+* [warm] I'll get it back for you. -> augie_deal_warm
+* [blunt] Why not go yourself? -> augie_why
+* [wry] You want me to walk into a debt collector's house. For a photograph. -> augie_why
+
+=== augie_why
+Augie: Because I've been up those stairs, and I came down with less than I took up. Look at me. Do I look like a man who goes back?
+Augie: You've got a look. Like you've already seen the worst thing that happens to people, and then you did the paperwork.
+-> augie_deal
+
+=== augie_deal_warm
+~ remember augie ines_kind
+Augie: ...Yeah. All right. Thank you. Nobody says that on the Row unless they want something.
+-> augie_deal
+
+=== augie_deal
+~ set quest.camera
+Augie: It's a press camera, brown leather case. There are prints tucked in the lid. Please — don't look at the prints.
+-> END
+
+=== augie_again
+Augie: Number fourteen. Top floor. Brown leather case.
+? {stance:cold>=2} -> augie_again_cold
+-> END
+
+=== augie_again_cold
+Augie: You don't have to like me, Deadhouse. Just bring it back.
+-> END
+
+=== augie_return
+Augie: Is that — you got it. You actually got it.
+? {looked_at_prints} -> augie_return_looked
+-> augie_return_clean
+
+=== augie_return_looked
+> He opens the lid. Thumbs the prints. His face goes very still.
+Augie: These are out of order.
+* [blunt] I looked. -> augie_honest
+* [cold] Hobb's men, probably. -> augie_lie
+* [warm] I wanted to know what I was carrying. -> augie_honest_warm
+
+=== augie_honest
+~ remember augie ines_honest
+Augie: ...Right. Then you know why Hobb wanted it. And why I want it more.
+-> augie_photo
+
+=== augie_honest_warm
+~ remember augie ines_honest
+Augie: Can't say I wouldn't have. Just — that man pays my rent, in a manner of speaking. Forget his face. He'd want you to.
+-> augie_photo
+
+=== augie_lie
+~ remember augie ines_lied
+Augie: Sure. Hobb's men.
+> He doesn't believe you. He's polite enough not to say so, and that's worse.
+-> augie_photo
+
+=== augie_return_clean
+~ remember augie trusts_ines
+Augie: And the prints are still in order. God bless you, Deadhouse. I mean it.
+-> augie_photo
+
+=== augie_photo
+~ take camera
+~ give photo
+~ remember augie camera_returned
+~ set quest.camera_done
+Augie: Here. Ten past two, the Velour's side door. That's Reyes coming out. Looks sick, doesn't he? Or drunk.
+Augie: And that's Lionel Gaunt holding the door for him. Vivienne Sabler's floor manager. Carnation and all.
+Augie: Whatever happened to Reyes, it started inside that club. I'd bet my hands on it.
+~ call camera_returned
+-> END
+
+=== augie_after
+? {augie.ines_lied} -> augie_after_cool
+Augie: If you ever need a picture taken, Deadhouse — any picture — you come to me first.
+-> END
+
+=== augie_after_cool
+Augie: Evening.
+> Friendly. Careful. Both at once.
+-> END
+
+# ---------------------------------------------------------------- Vivienne Sabler
+=== viv_start
+? {viv.met} -> viv_again
+~ remember viv met
+> A woman in black silk under the canopy, smoking as if she'd paid for the rain.
+Vivienne (amused): The Deadhouse sends its wagon to my door twice in one week. People will talk.
+Ines: People were already talking.
+Vivienne (neutral): Vivienne Sabler. I own the noise coming through these walls. And you're the woman who takes my customers away when they stop breathing.
+* [wry] Only the ones who don't tip. -> viv_wry
+* [blunt] Tomas Reyes walked out of your club and ended up on my table. -> viv_blunt
+* [cold] I'm not here to make friends. -> viv_cold
+* [warm] You look like you came out for the air. -> viv_warm
+
+=== viv_wry
+~ remember viv liked_joke
+Vivienne (amused): Then you'd have a very crowded table.
+-> viv_mid
+
+=== viv_blunt
+~ remember viv pressed_early
+Vivienne (cold): Half this city walks out of my club and ends up somewhere worse. I sell them the evening. I don't sell them the morning.
+-> viv_mid
+
+=== viv_cold
+Vivienne (neutral): Good. Friends ask for credit.
+-> viv_mid
+
+=== viv_warm
+~ remember viv saw_through
+Vivienne (warm): ...I did. Don't tell anyone. In there they think I don't need anything at all.
+-> viv_mid
+
+=== viv_mid
+Vivienne (neutral): Next you'll ask me about Hobb. Everyone with that look on their face asks about Hobb.
+* [blunt] What do you know about him? -> viv_hobb
+* {augie.met} [wry] Augie Prell sends his regards. -> viv_augie
+* [cold] I'll ask what I like. -> viv_hobb_cold
+
+=== viv_augie
+Vivienne (amused): Augie sends his regards to everyone. Usually in an envelope, with a price on it.
+-> viv_hobb
+
+=== viv_hobb_cold
+Vivienne (amused): And I'll answer what I like. It's a fair arrangement.
+-> viv_hobb
+
+=== viv_hobb
+Vivienne (neutral): Hobb collects. For a man who never comes to the Row himself. He keeps boys on the stairs of Fourteen, and a gun in his coat he loves more than his mother.
+? {viv.saw_through | viv.liked_joke} -> viv_tip
+Vivienne (cold): That's all you get for free.
+-> viv_close
+
+=== viv_tip
+~ remember viv gave_tip
+~ set tip.fire_escape
+Vivienne (warm): His boys watch the stairs. Nobody watches the fire escape. Hobb thinks the alley is beneath him.
+-> viv_close
+
+=== viv_close
+Vivienne (amused): Come inside some night when you're not carrying anyone. Bruno lets in anything that isn't wearing a uniform.
+* [warm] Maybe I will. -> viv_flirt
+* [wry] I'll ask the dead if they can spare me. -> viv_flirt_wry
+* [cold] I'm always carrying someone. -> viv_end_cold
+
+=== viv_flirt
+~ remember viv interested
+Vivienne (warm): Maybe you will. I'll have them keep the lights low. You look like a woman who's tired of being seen by daylight.
+-> END
+
+=== viv_flirt_wry
+~ remember viv interested
+Vivienne (amused): The dead can always spare you. It's the living who keep count.
+-> END
+
+=== viv_end_cold
+Vivienne (neutral): Then put them down sometime. They're heavier than they look.
+-> END
+
+=== viv_again
+? {has:photo} -> viv_photo
+? {viv.shown_photo} -> viv_after_show
+Vivienne (amused): Still out here? The rain suits you. The coat doesn't.
+-> END
+
+=== viv_photo
+> You could show her the photograph. Her floor manager, holding the door for a man who'd be dead by morning.
+* [blunt] Show her. -> viv_show
+* [cold] Keep it to yourself. For now. -> viv_hold
+
+=== viv_show
+~ remember viv shown_photo
+~ set quest.viv_shown
+Vivienne (cold): Lionel. Of course it's Lionel.
+Vivienne (neutral): Put that away before anyone inside sees it. Not here. Not with the whole block watching. Ask me again when the Row has gone to bed.
+> [The Velour, Lionel Gaunt and Vivienne's answer are beyond Prototype 1. This thread continues in the vertical slice.]
+-> END
+
+=== viv_hold
+~ remember viv photo_withheld
+Vivienne (amused): You've got a secret. It shows. It suits you better than the coat.
+-> END
+
+=== viv_after_show
+Vivienne (neutral): Not tonight, Ines. I said not tonight.
+> She knows your name. You never gave it to her.
+-> END
+
+# ---------------------------------------------------------------- Bruno
+=== bruno_start
+? {viv.interested} -> bruno_viv
+Bruno: Deliveries round back. And round back is closed.
+* [wry] I'm not delivering. I'm collecting. -> bruno_wry
+* [blunt] I need to get inside. -> bruno_no
+* [cold] Never mind. -> END
+
+=== bruno_wry
+Bruno: Then you're definitely round back.
+-> END
+
+=== bruno_no
+Bruno: Not in that coat. Not tonight. Nothing personal. I don't do personal.
+-> END
+
+=== bruno_viv
+Bruno: She said you might come back. She also said "not tonight." She says a lot of things.
+-> END
+
+# ---------------------------------------------------------------- Sully
+=== sully_start
+? {sully.lit} -> sully_after
+Sully: Lady. Lady. Got a light? This rain's got into every match in Corvane.
+-> sully_ask
+
+=== sully_ask
+* {has:matches} [warm] Here. -> sully_light
+* [wry] Do I know you? -> sully_know
+* [cold] Keep walking. -> sully_no
+
+=== sully_know
+Sully: Everybody knows Sully. Sully knows everybody. That's the whole economy, lady.
+-> sully_ask
+
+=== sully_light
+~ remember sully lit
+> You strike a match inside your coat. He leans into it like a confession.
+Sully: Bless you. Bless you. Listen — you're going into Fourteen, aren't you? You've got the face for it.
+Sully: The Dunne brothers drink in the hall downstairs. The skinny one with the knife sits on the second landing, jumpy as a cat — scared of the dark, if you ask me. And Hobb never comes down. Never.
+~ set tip.tenement
+-> END
+
+=== sully_no
+Sully: Everybody's a critic.
+-> END
+
+=== sully_after
+Sully: Warmest I've been all week. You need anything on the Row, you ask for Sully.
+-> END
+
+# ---------------------------------------------------------------- places
+=== hotel_door
+> ROOMS BY THE HOUR — CASH — NO QUESTIONS. The night clerk looks up, looks at your coat, and goes back to his newspaper.
+Clerk: We're full. We're always full for the Deadhouse.
+-> END
+
+=== phone
+> The receiver is warm. Somebody was just here. The coin slot's been jammed with a matchstick.
+? {quest.camera} -> phone_think
+-> END
+
+=== phone_think
+> You could call the Deadhouse and tell Dr. Abernathy where you are. He'd tell you to come back. You hang up.
+-> END
+
+=== marquee_door
+> Planks nailed over the staff door, newer than the rest of the boarding. Through the gaps, cold light flickers: twenty-four times a second. Someone is running a projector inside a cinema that closed in 1931.
+? {remnant:maud} -> END
+> The wood is soft with rain. Someone strong enough could take it down. You aren't. Not alone.
+-> END
+
+=== wagon
+> The wagon ticks as it cools. CITY MORGUE, the door says, in letters someone repaints every spring.
+* [Prototype] Use the test kit: grant Maud Kessel's Lesson (Break) -> wagon_kit
+* Leave it. -> END
+
+=== wagon_kit
+? {remnant:maud} -> wagon_kit_done
+~ call grant_maud
+> PROTOTYPE NOTE: in the full game Maud is acquired in the Sumps (Night Two, the cellar fight ring). Here she is granted so the boarded door can be tested.
+-> END
+
+=== wagon_kit_done
+> Maud is already with you. She's been cracking her knuckles for an hour.
+-> END

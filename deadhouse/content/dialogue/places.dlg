@@ -1,0 +1,120 @@
+# ============================================================================
+#  The alley, the roofs, the Marquee
+# ============================================================================
+
+# ---------------------------------------------------------------- Rosa (hotel maid, on her break)
+=== rosa_start
+? {rosa.met} -> rosa_again
+~ remember rosa met
+Rosa: You want something, honey, or are you just using the alley like everybody else?
+* [warm] Just passing. Long night? -> rosa_warm
+* [blunt] You know Hobb's men? -> rosa_hobb
+* [wry] Is the alley always this popular? -> rosa_wry
+
+=== rosa_wry
+Rosa: Lovers, drunks, husbands who won't use the Calla's front door. You're new. You don't fit any of those.
+-> rosa_hobb
+
+=== rosa_warm
+~ remember rosa liked
+Rosa: Sixteen rooms. Fresh sheets every hour, on the hour. You learn a lot about a city from its sheets.
+-> rosa_hobb
+
+=== rosa_hobb
+Rosa: Hobb's boys come down here to piss and lie about women. The skinny one, Pike — he's scared of the dark. Sleeps with the light on, they say.
+Rosa: And... I don't know you. But a kid from the Row went to see a man in the Sumps. Easy money, he said. One night's work, nothing indecent.
+Rosa: He came back quiet. Not drunk quiet. Empty. Like somebody took the last good hour out of him.
+~ set clue.donor_rumor
+* [warm] What's his name? -> rosa_name
+* [cold] People get quiet. -> rosa_cold
+
+=== rosa_name
+~ remember rosa trusted
+Rosa: Pim. He's staying with Jo Fairweather now. Jo looks after her own.
+> [Jo Fairweather and the Lantern Society are beyond Prototype 1.]
+-> END
+
+=== rosa_cold
+Rosa: Sure. Sure they do. Break's over.
+-> END
+
+=== rosa_again
+? {rosa.trusted} -> rosa_again_warm
+Rosa: Still here? You'll catch your death. Not that you'd notice, in your line.
+-> END
+
+=== rosa_again_warm
+Rosa: If you see Pim, tell him Rosa says eat something.
+-> END
+
+# ---------------------------------------------------------------- the alley
+=== alley_gate
+> A chained gate into the yard behind the next block. The chain is new. The padlock is newer. Somebody has gone to some trouble to keep people out of a yard full of nothing.
+> [Beyond Prototype 1.]
+-> END
+
+# ---------------------------------------------------------------- the roof
+=== roof_escape
+> The fire escape zigzags down the side of Number Fourteen. Rain drums on the grating.
+* Down to the alley. -> roof_down
+* {!tenement.hobb_down} Down one flight, to Hobb's window. -> roof_window
+* {tenement.hobb_down} Down to the top-floor window. -> roof_window
+* Stay up here a while. -> END
+
+=== roof_down
+~ call go_alley
+-> END
+
+=== roof_window
+~ call go_window
+-> END
+
+# ---------------------------------------------------------------- Mr. Haskell
+=== haskell_start
+? {haskell.met} -> haskell_again
+~ remember haskell met
+> An old man in a good suit gone thin at the elbows, standing in the front row with his hands folded, the way people stand at gravesides.
+Haskell: You broke my door. ...That's all right. Nobody has come in since nineteen thirty-one. I'd begun to think the door was the problem.
+Ines: You run this every night?
+Haskell: Every night. Twenty-four frames a second. Somebody has to.
+* [warm] Who is she? The nurse in the doorway. -> haskell_wife
+* [blunt] What is this film? -> haskell_film
+* [wry] Bit late for the matinee. -> haskell_wry
+
+=== haskell_wry
+Haskell: It's always late in here. That's the arrangement.
+-> haskell_film
+
+=== haskell_film
+Haskell: The hospital paid for it. Saint Agathe's. "A Modern Hospital." We showed it before the features the summer they opened the east wing. Then the east wing closed, and they wrote asking for every print back.
+> You worked at Saint Agathe's for six years. In six years you never once saw the east wing open.
+-> haskell_offer
+
+=== haskell_wife
+~ remember haskell asked_wife
+Haskell: Margit. My wife. She had the night ward in the east wing. They never said what happened. They said she'd been very brave, and they sent back her cap.
+> On the screen she turns away again, the way she has every night for twenty-three years.
+-> haskell_offer
+
+=== haskell_offer
+Haskell: You're from the Deadhouse. You have the look. You'll go to Saint Agathe's eventually. Everyone like you does.
+Haskell: Take this. It's the part they cut. I never show it. I can't. But someone should look at it who isn't afraid of the dead.
+~ give reel
+~ set haskell.reel
+* [warm] I'll look. And I'll bring it back to you. -> haskell_promise
+* [cold] Why me? -> haskell_whyme
+
+=== haskell_promise
+~ remember haskell promised
+Haskell: Bring her back with it, if you can. ...No. I know. Just bring it back.
+> [Saint Agathe's is beyond Prototype 1.]
+-> END
+
+=== haskell_whyme
+Haskell: Because you came in through the wall. Everyone else just walks past.
+> [Saint Agathe's is beyond Prototype 1.]
+-> END
+
+=== haskell_again
+Haskell: Shh. This is the good part.
+-> END

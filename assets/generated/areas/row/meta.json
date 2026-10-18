@@ -1,0 +1,902 @@
+{
+ "size": [
+  1440,
+  300
+ ],
+ "layers": {
+  "bg": {
+   "lights": [
+    {
+     "x": 41,
+     "y": 158,
+     "radius": 70,
+     "color": [
+      0.75,
+      0.9,
+      1.0
+     ],
+     "intensity": 0.55
+    },
+    {
+     "x": 254,
+     "y": 84,
+     "radius": 40,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.35
+    },
+    {
+     "x": 302,
+     "y": 156,
+     "radius": 60,
+     "color": [
+      1.0,
+      0.72,
+      0.42
+     ],
+     "intensity": 0.5
+    },
+    {
+     "x": 565,
+     "y": 152,
+     "radius": 60,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.35
+    },
+    {
+     "x": 1132,
+     "y": 84,
+     "radius": 40,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.35
+    },
+    {
+     "x": 1208,
+     "y": 162,
+     "radius": 95,
+     "color": [
+      1.0,
+      0.85,
+      0.65
+     ],
+     "intensity": 0.75
+    },
+    {
+     "x": 78,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95,
+     "flicker": "buzz"
+    },
+    {
+     "x": 122,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95
+    },
+    {
+     "x": 318,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95
+    },
+    {
+     "x": 362,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95
+    },
+    {
+     "x": 558,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95
+    },
+    {
+     "x": 602,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95,
+     "flicker": "buzz"
+    },
+    {
+     "x": 798,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95,
+     "flicker": "buzz"
+    },
+    {
+     "x": 842,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95
+    },
+    {
+     "x": 1038,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95
+    },
+    {
+     "x": 1082,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95
+    },
+    {
+     "x": 1278,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95
+    },
+    {
+     "x": 1322,
+     "y": 268,
+     "radius": 78,
+     "color": [
+      1.0,
+      0.78,
+      0.5
+     ],
+     "intensity": 0.95,
+     "flicker": "buzz"
+    }
+   ],
+   "props": [
+    {
+     "kind": "flicker_light",
+     "x": 105,
+     "y": 112,
+     "pattern": "dying",
+     "light": {
+      "radius": 40,
+      "color": [
+       1.0,
+       0.78,
+       0.5
+      ],
+      "intensity": 0.6
+     }
+    },
+    {
+     "kind": "sign",
+     "sprite": "row/rooms",
+     "x": 374,
+     "y": 120,
+     "flicker": "buzz",
+     "layer": "facade",
+     "light": {
+      "dx": 20.5,
+      "dy": 40,
+      "radius": 45,
+      "color": [
+       1.0,
+       0.22,
+       0.22
+      ],
+      "intensity": 0.6
+     }
+    },
+    {
+     "kind": "sign",
+     "sprite": "row/hotel_blade",
+     "x": 412,
+     "y": 18,
+     "flicker": "steady",
+     "layer": "facade",
+     "light": {
+      "dx": 6.5,
+      "dy": 108,
+      "radius": 90,
+      "color": [
+       1.0,
+       0.22,
+       0.22
+      ],
+      "intensity": 0.9
+     }
+    },
+    {
+     "kind": "dancers",
+     "x": 534,
+     "y": 78,
+     "w": 11,
+     "h": 22,
+     "phase": 1.1099999999999999
+    },
+    {
+     "kind": "dancers",
+     "x": 582,
+     "y": 78,
+     "w": 11,
+     "h": 22,
+     "phase": 1.85
+    },
+    {
+     "kind": "chase",
+     "sprite": "row/velour_canopy",
+     "x": 515,
+     "y": 96,
+     "bulbs_y": 5,
+     "bulbs_x": [
+      2,
+      6,
+      10,
+      14,
+      18,
+      22,
+      26,
+      30,
+      34,
+      38,
+      42,
+      46,
+      50,
+      54,
+      58,
+      62,
+      66,
+      70,
+      74,
+      78,
+      82,
+      86,
+      90,
+      94
+     ],
+     "color": [
+      255,
+      211,
+      138,
+      255
+     ],
+     "light": {
+      "dx": 50.0,
+      "dy": 40,
+      "radius": 80,
+      "color": [
+       1.0,
+       0.78,
+       0.5
+      ],
+      "intensity": 0.5
+     }
+    },
+    {
+     "kind": "sign",
+     "sprite": "row/velour_sign",
+     "x": 520,
+     "y": 18,
+     "flicker": "steady",
+     "layer": "facade",
+     "light": {
+      "dx": 45.0,
+      "dy": 96,
+      "radius": 120,
+      "color": [
+       1.0,
+       0.25,
+       0.68
+      ],
+      "intensity": 0.5
+     }
+    },
+    {
+     "kind": "rope",
+     "x": 527,
+     "y": 162,
+     "w": 22
+    },
+    {
+     "kind": "rope",
+     "x": 581,
+     "y": 162,
+     "w": 22
+    },
+    {
+     "kind": "sign",
+     "sprite": "row/loans",
+     "x": 714,
+     "y": 106,
+     "flicker": "buzz",
+     "layer": "facade",
+     "light": {
+      "dx": 19.5,
+      "dy": 50,
+      "radius": 60,
+      "color": [
+       0.4,
+       1.0,
+       0.55
+      ],
+      "intensity": 0.6
+     }
+    },
+    {
+     "kind": "sign",
+     "sprite": "row/marquee_blade",
+     "x": 942,
+     "y": 4,
+     "flicker": "dying",
+     "layer": "facade",
+     "light": {
+      "dx": 8.5,
+      "dy": 49,
+      "radius": 60,
+      "color": [
+       1.0,
+       0.78,
+       0.5
+      ],
+      "intensity": 0.5
+     }
+    },
+    {
+     "kind": "boarded_door",
+     "x": 1070,
+     "y": 114,
+     "w": 20,
+     "h": 34,
+     "id": "marquee_side",
+     "pattern": "projector",
+     "light": {
+      "dx": 10,
+      "dy": 42,
+      "radius": 46,
+      "color": [
+       0.7,
+       0.78,
+       1.0
+      ],
+      "intensity": 0.55
+     }
+    },
+    {
+     "kind": "sign",
+     "sprite": "row/allnight",
+     "x": 1174,
+     "y": 93,
+     "flicker": "steady",
+     "layer": "facade",
+     "light": {
+      "dx": 31.5,
+      "dy": 50,
+      "radius": 70,
+      "color": [
+       0.25,
+       0.85,
+       1.0
+      ],
+      "intensity": 0.6
+     }
+    },
+    {
+     "kind": "sign",
+     "sprite": "row/parking",
+     "x": 1332,
+     "y": 92,
+     "flicker": "dying",
+     "layer": "facade",
+     "light": {
+      "dx": 25.5,
+      "dy": 45,
+      "radius": 55,
+      "color": [
+       1.0,
+       0.65,
+       0.25
+      ],
+      "intensity": 0.5
+     }
+    },
+    {
+     "kind": "steam",
+     "x": 245,
+     "y": 216
+    },
+    {
+     "kind": "steam",
+     "x": 767,
+     "y": 216
+    },
+    {
+     "kind": "steam",
+     "x": 1217,
+     "y": 216
+    },
+    {
+     "kind": "lamp",
+     "sprite": "row/lamp",
+     "x": 65,
+     "y": 120,
+     "base_y": 174,
+     "flicker": "steady",
+     "light": {
+      "dx": 5,
+      "dy": 50,
+      "radius": 88,
+      "color": [
+       1.0,
+       0.62,
+       0.3
+      ],
+      "intensity": 1.05
+     }
+    },
+    {
+     "kind": "lamp",
+     "sprite": "row/lamp",
+     "x": 325,
+     "y": 120,
+     "base_y": 174,
+     "flicker": "steady",
+     "light": {
+      "dx": 5,
+      "dy": 50,
+      "radius": 88,
+      "color": [
+       1.0,
+       0.62,
+       0.3
+      ],
+      "intensity": 1.05
+     }
+    },
+    {
+     "kind": "lamp",
+     "sprite": "row/lamp",
+     "x": 635,
+     "y": 120,
+     "base_y": 174,
+     "flicker": "steady",
+     "light": {
+      "dx": 5,
+      "dy": 50,
+      "radius": 88,
+      "color": [
+       1.0,
+       0.62,
+       0.3
+      ],
+      "intensity": 1.05
+     }
+    },
+    {
+     "kind": "lamp",
+     "sprite": "row/lamp",
+     "x": 865,
+     "y": 120,
+     "base_y": 174,
+     "flicker": "dying",
+     "light": {
+      "dx": 5,
+      "dy": 50,
+      "radius": 88,
+      "color": [
+       1.0,
+       0.62,
+       0.3
+      ],
+      "intensity": 1.05
+     }
+    },
+    {
+     "kind": "lamp",
+     "sprite": "row/lamp",
+     "x": 1180,
+     "y": 120,
+     "base_y": 174,
+     "flicker": "buzz",
+     "light": {
+      "dx": 5,
+      "dy": 50,
+      "radius": 88,
+      "color": [
+       1.0,
+       0.62,
+       0.3
+      ],
+      "intensity": 1.05
+     }
+    },
+    {
+     "kind": "lamp",
+     "sprite": "row/lamp",
+     "x": 1390,
+     "y": 120,
+     "base_y": 174,
+     "flicker": "steady",
+     "light": {
+      "dx": 5,
+      "dy": 50,
+      "radius": 88,
+      "color": [
+       1.0,
+       0.62,
+       0.3
+      ],
+      "intensity": 1.05
+     }
+    },
+    {
+     "kind": "static",
+     "sprite": "row/trashcan",
+     "x": 220,
+     "base_y": 162
+    },
+    {
+     "kind": "static",
+     "sprite": "row/trashcan",
+     "x": 272,
+     "base_y": 166
+    },
+    {
+     "kind": "static",
+     "sprite": "row/trashcan",
+     "x": 1150,
+     "base_y": 164
+    },
+    {
+     "kind": "static",
+     "sprite": "row/hydrant",
+     "x": 818,
+     "base_y": 170
+    },
+    {
+     "kind": "static",
+     "sprite": "row/phonebooth",
+     "x": 680,
+     "base_y": 168
+    },
+    {
+     "kind": "static",
+     "sprite": "row/newsbox",
+     "x": 1290,
+     "base_y": 168
+    },
+    {
+     "kind": "static",
+     "sprite": "row/trashcan",
+     "x": 1104,
+     "base_y": 162
+    },
+    {
+     "kind": "static",
+     "sprite": "row/wagon",
+     "x": 120,
+     "base_y": 196,
+     "id": "wagon"
+    }
+   ],
+   "colliders": [
+    [
+     90,
+     148,
+     4,
+     7
+    ],
+    [
+     116,
+     148,
+     4,
+     7
+    ],
+    [
+     0,
+     0,
+     232,
+     149
+    ],
+    [
+     268,
+     0,
+     842,
+     149
+    ],
+    [
+     1146,
+     0,
+     294,
+     149
+    ],
+    [
+     232,
+     0,
+     36,
+     92
+    ],
+    [
+     230,
+     92,
+     4,
+     57
+    ],
+    [
+     266,
+     92,
+     4,
+     57
+    ],
+    [
+     1110,
+     0,
+     36,
+     92
+    ],
+    [
+     1108,
+     92,
+     4,
+     57
+    ],
+    [
+     1144,
+     92,
+     4,
+     57
+    ],
+    [
+     -20,
+     0,
+     20,
+     300
+    ],
+    [
+     1440,
+     0,
+     20,
+     300
+    ],
+    [
+     0,
+     298,
+     1440,
+     4
+    ],
+    [
+     94,
+     292,
+     13,
+     8
+    ],
+    [
+     334,
+     292,
+     13,
+     8
+    ],
+    [
+     574,
+     292,
+     13,
+     8
+    ],
+    [
+     814,
+     292,
+     13,
+     8
+    ],
+    [
+     1054,
+     292,
+     13,
+     8
+    ],
+    [
+     1294,
+     292,
+     13,
+     8
+    ],
+    [
+     68,
+     170,
+     5,
+     4
+    ],
+    [
+     328,
+     170,
+     5,
+     4
+    ],
+    [
+     638,
+     170,
+     5,
+     4
+    ],
+    [
+     868,
+     170,
+     5,
+     4
+    ],
+    [
+     1183,
+     170,
+     5,
+     4
+    ],
+    [
+     1393,
+     170,
+     5,
+     4
+    ],
+    [
+     220,
+     158,
+     12,
+     5
+    ],
+    [
+     272,
+     162,
+     12,
+     5
+    ],
+    [
+     1150,
+     160,
+     12,
+     5
+    ],
+    [
+     818,
+     166,
+     10,
+     5
+    ],
+    [
+     680,
+     164,
+     18,
+     5
+    ],
+    [
+     1290,
+     164,
+     11,
+     5
+    ],
+    [
+     1104,
+     158,
+     12,
+     5
+    ],
+    [
+     124,
+     186,
+     70,
+     10,
+     "wagon"
+    ]
+   ],
+   "anchors": {
+    "tenement_door": [
+     105,
+     156
+    ],
+    "alley_a_mouth": [
+     250,
+     152
+    ],
+    "alley_a_exit": [
+     250,
+     96
+    ],
+    "hotel_door": [
+     344,
+     154
+    ],
+    "velour_door": [
+     565,
+     154
+    ],
+    "pawn_door": [
+     776,
+     154
+    ],
+    "marquee_side_door": [
+     1080,
+     154
+    ],
+    "alley_b_mouth": [
+     1128,
+     152
+    ],
+    "alley_b_exit": [
+     1128,
+     96
+    ],
+    "diner_door": [
+     1279,
+     154
+    ],
+    "wagon_side": [
+     160,
+     204
+    ]
+   },
+   "sprites": {},
+   "ropepost": "row/ropepost"
+  },
+  "fg": {
+   "lights": [],
+   "props": [],
+   "colliders": [],
+   "anchors": {},
+   "sprites": {}
+  }
+ }
+}

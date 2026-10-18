@@ -1,0 +1,271 @@
+[
+ {
+  "area": "row",
+  "spawn": "start"
+ },
+ {
+  "wait": 30
+ },
+ {
+  "eval": "w.request_transition('tenement', 'from_row')"
+ },
+ {
+  "wait": 60
+ },
+ {
+  "eval": "assert w.area.id == 'tenement', w.area.id"
+ },
+ {
+  "walk_to": [
+   240,
+   676
+  ]
+ },
+ {
+  "wait": 60
+ },
+ {
+  "eval": "assert w.area.id == 'row', w.area.id"
+ },
+ {
+  "walk_to": [
+   110,
+   178
+  ]
+ },
+ {
+  "walk_to": [
+   250,
+   150
+  ]
+ },
+ {
+  "walk_to": [
+   250,
+   92
+  ]
+ },
+ {
+  "wait": 60
+ },
+ {
+  "eval": "assert w.area.id == 'alley', w.area.id"
+ },
+ {
+  "walk_to": [
+   72,
+   342
+  ]
+ },
+ {
+  "eval": "p.face(-1, 0)"
+ },
+ {
+  "tap": "interact",
+  "settle": 90
+ },
+ {
+  "eval": "assert w.area.id == 'roof', w.area.id"
+ },
+ {
+  "tap": "remnant",
+  "settle": 5
+ },
+ {
+  "walk_to": [
+   148,
+   214
+  ]
+ },
+ {
+  "eval": "p.face(0, -1)"
+ },
+ {
+  "tap": "interact",
+  "settle": 30
+ },
+ {
+  "eval": "assert s.has('lantern'), 'lantern not picked up'"
+ },
+ {
+  "walk_to": [
+   40,
+   284
+  ]
+ },
+ {
+  "eval": "p.face(0, 1)"
+ },
+ {
+  "tap": "interact",
+  "settle": 30
+ },
+ {
+  "tap": "confirm",
+  "settle": 40
+ },
+ {
+  "tap": "confirm",
+  "settle": 20
+ },
+ {
+  "tap": "down",
+  "settle": 6
+ },
+ {
+  "tap": "confirm",
+  "settle": 120
+ },
+ {
+  "eval": "assert w.area.id == 'tenement', w.area.id"
+ },
+ {
+  "shot": "flow_hobb_room.png"
+ },
+ {
+  "eval": "p.hp = 1; h = w.by_tag('hobb'); h.become_alert(w, p.x, p.y, shout=False)"
+ },
+ {
+  "wait": 200
+ },
+ {
+  "eval": "assert ps.dead_t is not None, 'expected Ines to be down'"
+ },
+ {
+  "shot": "flow_death.png"
+ },
+ {
+  "tap": "interact",
+  "settle": 80
+ },
+ {
+  "eval": "assert ps.dead_t is None and not p.dead and w.area.id == 'tenement', (ps.dead_t, p.dead, w.area.id)"
+ },
+ {
+  "eval": "w.request_transition('row', 'from_tenement')"
+ },
+ {
+  "wait": 60
+ },
+ {
+  "walk_to": [
+   160,
+   206
+  ]
+ },
+ {
+  "eval": "p.face(0, -1)"
+ },
+ {
+  "tap": "interact",
+  "settle": 30
+ },
+ {
+  "tap": "confirm",
+  "settle": 40
+ },
+ {
+  "tap": "confirm",
+  "settle": 40
+ },
+ {
+  "tap": "confirm",
+  "settle": 40
+ },
+ {
+  "wait": 30
+ },
+ {
+  "tap": "confirm",
+  "settle": 20
+ },
+ {
+  "tap": "confirm",
+  "settle": 20
+ },
+ {
+  "tap": "confirm",
+  "settle": 20
+ },
+ {
+  "eval": "assert 'maud' in s.remnants, s.remnants"
+ },
+ {
+  "walk_to": [
+   300,
+   200
+  ]
+ },
+ {
+  "walk_to": [
+   1080,
+   200
+  ]
+ },
+ {
+  "walk_to": [
+   1080,
+   156
+  ]
+ },
+ {
+  "eval": "p.face(0, -1)"
+ },
+ {
+  "tap": "interact",
+  "settle": 60
+ },
+ {
+  "tap": "interact",
+  "settle": 80
+ },
+ {
+  "eval": "assert w.area.id == 'marquee', w.area.id"
+ },
+ {
+  "tap": "inventory",
+  "settle": 5
+ },
+ {
+  "tap": "right",
+  "settle": 3
+ },
+ {
+  "tap": "right",
+  "settle": 3
+ },
+ {
+  "tap": "right",
+  "settle": 3
+ },
+ {
+  "tap": "right",
+  "settle": 3
+ },
+ {
+  "tap": "right",
+  "settle": 3
+ },
+ {
+  "shot": "flow_inventory_leads.png"
+ },
+ {
+  "tap": "inventory",
+  "settle": 5
+ },
+ {
+  "walk_to": [
+   36,
+   252
+  ]
+ },
+ {
+  "wait": 60
+ },
+ {
+  "eval": "assert w.area.id == 'row', w.area.id"
+ },
+ {
+  "shot": "flow_back_on_row.png"
+ }
+]

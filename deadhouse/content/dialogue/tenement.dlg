@@ -1,0 +1,77 @@
+# ============================================================================
+#  No. 14, the Garnet Arms
+# ============================================================================
+
+=== prints
+> A press camera in a brown leather case. Tucked inside the lid: a stack of prints, held with a rubber band gone soft.
+* [blunt] Look at the prints. -> prints_look
+* [warm] Leave them. Augie asked you not to. -> prints_leave
+
+=== prints_look
+~ set looked_at_prints
+> A bathhouse doorway, shot through rain. A heavy man in a good coat — Alderman Pruitt; his face is on the campaign posters by the El — with his hand on the back of a dockworker's neck. The younger man is laughing. Pruitt is looking at him like he's the only warm thing in the city.
+> Neither of them knows the camera is there.
+> The next print is the same doorway. Then the same men, closer. Augie wasn't selling this to a jealous wife.
+* [cold] Leverage. Somebody would pay a fortune for these. -> prints_cold
+* [warm] They look happy. That's the part someone will make them pay for. -> prints_warm
+* [wry] Corvane: where the only crime is getting caught. -> prints_wry
+
+=== prints_cold
+~ stance cold
+> You put them back in order. Mostly.
+-> END
+
+=== prints_warm
+~ remember ines saw_pruitt_kindly
+> You square the edges and slide them back beneath the band, the way they were.
+-> END
+
+=== prints_wry
+> You put them back. The rubber band snaps on the second try.
+-> END
+
+=== prints_leave
+> You close the lid without looking. Whatever's in there, it's somebody's life.
+~ set respected_prints
+-> END
+
+=== ledger
+~ set clue.dravo
+> A page torn from a collection ledger, in Hobb's square, angry hand. Names, sums, dates. One line is underlined twice:
+> "F. DRAVO — cellar under Hu's Laundry, Pell St. — 2 donors Thurs. Paid in full. Do NOT bring them up the front."
+? {remnant:silas} -> ledger_silas
+-> END
+
+=== ledger_silas
+Silas: Donors. Of what? Nobody gives anything in the Sumps, Calder. They get taken.
+> [The Sumps and Dravo's cellar are beyond Prototype 1.]
+-> END
+
+=== door_2b
+? {tenement.cleared} -> door_2b_after
+> A radio plays behind the door. The Mercer Quartet, from the Velour, two blocks and a whole world away.
+Woman: Whatever he owes, I don't owe it. Go away.
+* [warm] I'm not with Hobb. Are you all right in there? -> door_2b_warm
+* [cold] Leave it. -> END
+
+=== door_2b_warm
+Woman: ...All right? Honey, I'm listening to rich people dance. That's as all right as Number Fourteen gets.
+-> END
+
+=== door_2b_after
+Woman: It went quiet up there. Did you do that?
+* [blunt] Yes. -> door_2b_yes
+* [wry] Building's settling. -> door_2b_wry
+
+=== door_2b_yes
+~ remember kowal thanked
+Woman: Then God keep you, and don't you ever tell anyone I said it.
+-> END
+
+=== door_2b_wry
+Woman: Settling. Sure. You and me both.
+-> END
+
+=== door_1a
+> Somebody inside turns the radio louder. That's the whole answer.
+-> END

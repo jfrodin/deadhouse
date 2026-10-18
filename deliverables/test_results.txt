@@ -1,0 +1,49 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.1, pluggy-1.7.0 -- E:\Dev\RPG\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: E:\Dev\RPG
+collecting ... collected 34 items
+
+tests/test_approaches.py::test_outside_approach_take_hobb_from_behind PASSED [  2%]
+tests/test_approaches.py::test_darkness_approach_in_the_hall PASSED      [  5%]
+tests/test_approaches.py::test_head_on_fight_is_winnable_with_dodging PASSED [  8%]
+tests/test_assets.py::test_every_referenced_sound_exists PASSED          [ 11%]
+tests/test_assets.py::test_area_audio_beds_exist PASSED                  [ 14%]
+tests/test_assets.py::test_audio_engine_runs_on_dummy_driver PASSED      [ 17%]
+tests/test_assets.py::test_every_sprite_and_portrait_reference_exists PASSED [ 20%]
+tests/test_assets.py::test_art_generation_is_deterministic PASSED        [ 23%]
+tests/test_assets.py::test_synthesis_is_deterministic PASSED             [ 26%]
+tests/test_sim.py::test_every_area_loads_and_runs PASSED                 [ 29%]
+tests/test_sim.py::test_spawns_are_not_inside_walls PASSED               [ 32%]
+tests/test_sim.py::test_walls_stop_movement PASSED                       [ 35%]
+tests/test_sim.py::test_player_walks_and_sprints PASSED                  [ 38%]
+tests/test_sim.py::test_razor_combo_damages_and_kills_a_brawler PASSED   [ 41%]
+tests/test_sim.py::test_dodge_gives_invulnerability PASSED               [ 44%]
+tests/test_sim.py::test_enemies_hurt_ines_and_she_can_go_down PASSED     [ 47%]
+tests/test_sim.py::test_takedown_from_behind_in_the_dark PASSED          [ 50%]
+tests/test_sim.py::test_revolver_shot_hits_and_uses_a_round PASSED       [ 52%]
+tests/test_sim.py::test_gunshot_is_loud_and_alerts PASSED                [ 55%]
+tests/test_sim.py::test_visibility_depends_on_light PASSED               [ 58%]
+tests/test_sim.py::test_bottle_breaks_the_bulb_it_is_thrown_at PASSED    [ 61%]
+tests/test_sim.py::test_breaking_a_bulb_draws_the_brawlers_to_investigate PASSED [ 64%]
+tests/test_sim.py::test_lantern_flash_blinds_an_enemy_facing_ines PASSED [ 67%]
+tests/test_sim.py::test_gunshot_in_the_tenement_brings_reinforcements PASSED [ 70%]
+tests/test_sim.py::test_lessons_gate_traversal PASSED                    [ 73%]
+tests/test_sim.py::test_marquee_door_needs_maud_and_breaks_with_her PASSED [ 76%]
+tests/test_sim.py::test_pickups_and_equipping_the_tire_iron PASSED       [ 79%]
+tests/test_sim.py::test_dialogue_scripts_are_valid PASSED                [ 82%]
+tests/test_sim.py::test_camera_quest_flow PASSED                         [ 85%]
+tests/test_sim.py::test_vivienne_remembers_how_ines_spoke PASSED         [ 88%]
+tests/test_sim.py::test_save_load_roundtrip PASSED                       [ 91%]
+tests/test_sim.py::test_tenement_routes_are_walkable PASSED              [ 94%]
+tests/test_sim.py::test_row_reaches_doors_and_alley PASSED               [ 97%]
+tests/test_sim.py::test_alley_ladder_reachable PASSED                    [100%]
+
+============================= 34 passed in 2.85s ==============================
+
+=== End-to-end flow: tools/flows.json driven through the real GPU renderer (hidden window) ===
+  saved flow_hobb_room.png
+  saved flow_death.png
+  saved flow_inventory_leads.png
+  saved flow_back_on_row.png
+capture.py exit code: 0 (a failed assertion anywhere in the flow raises and exits non-zero)

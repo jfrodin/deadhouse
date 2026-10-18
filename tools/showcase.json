@@ -1,0 +1,72 @@
+[
+  {"area": "title"},
+  {"wait": 150},
+  {"shot": "01_title.png"},
+
+  {"area": "row", "spawn": "520,176"},
+  {"wait": 30},
+  {"eval": "ps.ui.title_card = None; ps.ui.whisper = None"},
+  {"place": [512, 176], "face": [1, -0.4]},
+  {"dialogue": "viv_start", "who": "vivienne", "picks": [3, 0, 0], "read_frames": 110,
+   "shot_at": {"1": "02_vivienne_amused.png", "4": "03_vivienne_choice.png", "9": "04_vivienne_warm.png"}},
+
+  {"area": "row", "spawn": "330,215"},
+  {"eval": "ps.ui.title_card = None; ps.ui.whisper = None; w.area.defn['_train'] = {'t': 0.0, 'x': 70.0, 'end': 2000}"},
+  {"wait": 70},
+  {"shot": "05_row_train.png"},
+
+  {"area": "row", "spawn": "1040,170"},
+  {"eval": "ps.ui.title_card = None; ps.ui.whisper = None"},
+  {"wait": 40},
+  {"shot": "06_row_marquee.png"},
+
+  {"area": "tenement", "spawn": "from_row"},
+  {"eval": "ps.ui.title_card = None; ps.ui.whisper = None"},
+  {"place": [118, 640], "face": [-1, 0]},
+  {"eval": "[e.become_alert(w, p.x, p.y, shout=False) for e in w.enemies() if e.group == 'ground']"},
+  {"wait": 20},
+  {"tap": "attack", "settle": 3},
+  {"shot": "07_tenement_fight.png"},
+  {"tap": "attack", "settle": 2},
+  {"tap": "attack", "settle": 2},
+  {"wait": 2},
+  {"shot": "08_tenement_fight2.png"},
+
+  {"area": "tenement", "spawn": "from_row"},
+  {"eval": "ps.ui.title_card = None; ps.ui.whisper = None; w.break_light(w.area.prop('bulb_f0')); w.events.clear()"},
+  {"state": {"give": {"lantern": 1}}},
+  {"place": [205, 650], "face": [-1, -0.3]},
+  {"tap": "lantern", "settle": 30},
+  {"shot": "09_tenement_dark_lantern.png"},
+
+  {"area": "tenement", "spawn": "from_window"},
+  {"eval": "ps.ui.title_card = None; ps.ui.whisper = None"},
+  {"place": [340, 205], "face": [-0.6, -1]},
+  {"eval": "h = w.by_tag('hobb'); h.become_alert(w, p.x, p.y, shout=False)"},
+  {"wait": 34},
+  {"shot": "10_hobb_aiming.png"},
+
+  {"area": "alley", "spawn": "from_row_a"},
+  {"eval": "ps.ui.title_card = None; ps.ui.whisper = None"},
+  {"walk_to": [150, 300]},
+  {"wait": 20},
+  {"shot": "11_alley.png"},
+
+  {"area": "roof", "spawn": "from_ladder"},
+  {"eval": "ps.ui.title_card = None; ps.ui.whisper = None"},
+  {"walk_to": [200, 236]},
+  {"wait": 10},
+  {"shot": "12_roof.png"},
+
+  {"area": "marquee", "spawn": "from_row"},
+  {"eval": "ps.ui.title_card = None; ps.ui.whisper = None"},
+  {"walk_to": [226, 152]},
+  {"wait": 20},
+  {"shot": "13_marquee.png"},
+
+  {"area": "row", "spawn": "560,200"},
+  {"state": {"give": {"lantern": 1, "tire_iron": 1, "camera": 1}}},
+  {"eval": "ps.ui.title_card = None; ps.ui.whisper = None"},
+  {"tap": "inventory", "settle": 10},
+  {"shot": "14_inventory.png"}
+]
